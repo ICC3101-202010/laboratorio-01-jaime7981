@@ -11,7 +11,7 @@ namespace Laboratorio1
         static void Main(string[] args)
         {
             Player p1 = new Player("Bob", "Kunga");
-            for (int i=0; i < 4; ++i) { 
+            for (int i=0; i < 1; ++i) { 
             p1.Trhow();
             }
 
