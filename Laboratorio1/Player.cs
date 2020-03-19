@@ -27,12 +27,16 @@ namespace Laboratorio1
             Console.WriteLine(rand);
         }
 
-        // Generate a random number between two numbers  
-        private int RandomNumber(int min, int max)
-        {
-            Random random = new Random();
-            return random.Next(min, max);
-        }
+        //Function to get a random number 
 
+        private static readonly Random random = new Random();
+        private static readonly object syncLock = new object();
+        public static int RandomNumber(int min, int max)
+        {
+            lock (syncLock)
+            { // synchronize
+                return random.Next(min, max);
+            }
+        }
     }
 }
